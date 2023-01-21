@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct StreamlineApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var appState = AppState.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        
     }
 }

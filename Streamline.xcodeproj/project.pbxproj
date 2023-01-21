@@ -11,6 +11,12 @@
 		D38AD1D72978F61400168E90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D62978F61400168E90 /* ContentView.swift */; };
 		D38AD1D92978F61500168E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38AD1D82978F61500168E90 /* Assets.xcassets */; };
 		D38AD1DC2978F61500168E90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38AD1DB2978F61500168E90 /* Preview Assets.xcassets */; };
+		D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1E52978FE2500168E90 /* AppDelegate.swift */; };
+		D3983FAB297BA05C00668CEB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FAA297BA05C00668CEB /* AppState.swift */; };
+		D3983FAF297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FAE297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift */; };
+		D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB2297BA2C900668CEB /* AppConstants.swift */; };
+		D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB4297BA4F600668CEB /* EventHandler.swift */; };
+		D3983FB7297BA88100668CEB /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB6297BA88100668CEB /* Workflow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		D38AD1D82978F61500168E90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D38AD1DB2978F61500168E90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D38AD1DD2978F61500168E90 /* Streamline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Streamline.entitlements; sourceTree = "<group>"; };
+		D38AD1E52978FE2500168E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3983FAA297BA05C00668CEB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D3983FAE297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsAccessibilityPermissionsView.swift; sourceTree = "<group>"; };
+		D3983FB2297BA2C900668CEB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		D3983FB4297BA4F600668CEB /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
+		D3983FB6297BA88100668CEB /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				D38AD1D42978F61400168E90 /* StreamlineApp.swift */,
-				D38AD1D62978F61400168E90 /* ContentView.swift */,
+				D38AD1E52978FE2500168E90 /* AppDelegate.swift */,
+				D3983FB1297BA2B200668CEB /* Config */,
+				D3983FB0297BA2A700668CEB /* AutomationEngine */,
+				D3983FAC297BA1DA00668CEB /* Views */,
 				D38AD1D82978F61500168E90 /* Assets.xcassets */,
 				D38AD1DD2978F61500168E90 /* Streamline.entitlements */,
 				D38AD1DA2978F61500168E90 /* Preview Content */,
@@ -67,6 +82,33 @@
 				D38AD1DB2978F61500168E90 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D3983FAC297BA1DA00668CEB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D38AD1D62978F61400168E90 /* ContentView.swift */,
+				D3983FAE297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3983FB0297BA2A700668CEB /* AutomationEngine */ = {
+			isa = PBXGroup;
+			children = (
+				D3983FB4297BA4F600668CEB /* EventHandler.swift */,
+				D3983FB6297BA88100668CEB /* Workflow.swift */,
+			);
+			path = AutomationEngine;
+			sourceTree = "<group>";
+		};
+		D3983FB1297BA2B200668CEB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D3983FAA297BA05C00668CEB /* AppState.swift */,
+				D3983FB2297BA2C900668CEB /* AppConstants.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */,
+				D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */,
 				D38AD1D72978F61400168E90 /* ContentView.swift in Sources */,
+				D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */,
+				D3983FB7297BA88100668CEB /* Workflow.swift in Sources */,
+				D3983FAF297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift in Sources */,
 				D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */,
+				D3983FAB297BA05C00668CEB /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +327,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -306,6 +355,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";

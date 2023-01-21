@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var appState = AppState.shared
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if appState.appHasAccessibilityPermissions ?? false {
+                Text("Streamline is running.")
+            } else {
+                NeedsAccessibilityPermissionsView()
+            }
         }
         .padding()
     }
