@@ -1,3 +1,3 @@
-# Streamline
+<img style="vertical-align: middle" src="assets/banner.png" alt="Streamline" />
 
-A text-expanding automation tool for macOS.
+Streamline is a text expansion automation tool for macOS.
