@@ -13,12 +13,13 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if appState.appHasAccessibilityPermissions ?? false {
-                Text("Streamline is running.")
+                GroupsView()
             } else {
                 NeedsAccessibilityPermissionsView()
             }
         }
         .padding()
+        .environmentObject(appState)
     }
 }
 

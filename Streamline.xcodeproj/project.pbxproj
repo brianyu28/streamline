@@ -17,6 +17,11 @@
 		D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB2297BA2C900668CEB /* AppConstants.swift */; };
 		D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB4297BA4F600668CEB /* EventHandler.swift */; };
 		D3983FB7297BA88100668CEB /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB6297BA88100668CEB /* Workflow.swift */; };
+		D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */; };
+		D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */; };
+		D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */; };
+		D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */; };
+		D3CCBED2297E458E00BEBC61 /* GroupListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBED1297E458E00BEBC61 /* GroupListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		D3983FB2297BA2C900668CEB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D3983FB4297BA4F600668CEB /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		D3983FB6297BA88100668CEB /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
+		D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroup.swift; sourceTree = "<group>"; };
+		D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
+		D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroupsState.swift; sourceTree = "<group>"; };
+		D3CCBED1297E458E00BEBC61 /* GroupListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +78,9 @@
 				D38AD1E52978FE2500168E90 /* AppDelegate.swift */,
 				D3983FB1297BA2B200668CEB /* Config */,
 				D3983FB0297BA2A700668CEB /* AutomationEngine */,
+				D3CCBECC297E44B700BEBC61 /* State */,
 				D3983FAC297BA1DA00668CEB /* Views */,
+				D3CCBEC0297E385900BEBC61 /* Preferences */,
 				D38AD1D82978F61500168E90 /* Assets.xcassets */,
 				D38AD1DD2978F61500168E90 /* Streamline.entitlements */,
 				D38AD1DA2978F61500168E90 /* Preview Content */,
@@ -87,8 +99,9 @@
 		D3983FAC297BA1DA00668CEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D38AD1D62978F61400168E90 /* ContentView.swift */,
-				D3983FAE297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift */,
+				D3CCBECA297E43FB00BEBC61 /* Main */,
+				D3CCBECB297E440400BEBC61 /* Errors */,
+				D3CCBEC5297E3F6A00BEBC61 /* WorkflowGroups */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +111,7 @@
 			children = (
 				D3983FB4297BA4F600668CEB /* EventHandler.swift */,
 				D3983FB6297BA88100668CEB /* Workflow.swift */,
+				D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */,
 			);
 			path = AutomationEngine;
 			sourceTree = "<group>";
@@ -105,10 +119,51 @@
 		D3983FB1297BA2B200668CEB /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				D3983FAA297BA05C00668CEB /* AppState.swift */,
 				D3983FB2297BA2C900668CEB /* AppConstants.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		D3CCBEC0297E385900BEBC61 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		D3CCBEC5297E3F6A00BEBC61 /* WorkflowGroups */ = {
+			isa = PBXGroup;
+			children = (
+				D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */,
+				D3CCBED1297E458E00BEBC61 /* GroupListItem.swift */,
+			);
+			path = WorkflowGroups;
+			sourceTree = "<group>";
+		};
+		D3CCBECA297E43FB00BEBC61 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D38AD1D62978F61400168E90 /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D3CCBECB297E440400BEBC61 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D3983FAE297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		D3CCBECC297E44B700BEBC61 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D3983FAA297BA05C00668CEB /* AppState.swift */,
+				D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,8 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */,
 				D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */,
+				D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */,
 				D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */,
+				D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */,
+				D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */,
+				D3CCBED2297E458E00BEBC61 /* GroupListItem.swift in Sources */,
 				D38AD1D72978F61400168E90 /* ContentView.swift in Sources */,
 				D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */,
 				D3983FB7297BA88100668CEB /* Workflow.swift in Sources */,
@@ -327,7 +387,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";

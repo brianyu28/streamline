@@ -19,6 +19,8 @@ class AppState: ObservableObject {
     /** The currently typed string by the user, for matching typed text triggers. */
     @Published var monitoredInput: String = ""
     
+    @Published var workflowGroups: [WorkflowGroup] = []
+    
     /** Workflows to actively listen for. */
     // TODO: Let user configure these. For testing for now, using a predefined list of workflows.
     @Published var workflows: [Workflow] = [
@@ -26,4 +28,14 @@ class AppState: ObservableObject {
         Workflow(trigger: ":test2", content: "Expanded 2"),
         Workflow(trigger: ":testing2", content: "Expanded 3"),
     ]
+    
+    static var previewState : AppState {
+        let state = AppState()
+        state.appHasAccessibilityPermissions = true
+        state.workflowGroups = [
+            WorkflowGroup(name: "Example Group 1"),
+            WorkflowGroup(name: "Example Group 2")
+        ]
+        return state
+    }
 }
