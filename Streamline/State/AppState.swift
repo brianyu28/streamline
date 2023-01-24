@@ -39,3 +39,11 @@ class AppState: ObservableObject {
         return state
     }
 }
+
+extension AppState {
+    func updateGroupName(id: UUID, name: String) {
+        if let groupIndex = self.workflowGroups.firstIndex(where: { $0.id == id }) {
+            self.workflowGroups[groupIndex].name = name
+        }
+    }
+}

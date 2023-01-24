@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WorkflowGroup: Identifiable {
+struct WorkflowGroup: Identifiable, Hashable {
     var id = UUID()
     var name : String = ""
     var workflows: [Workflow] = []

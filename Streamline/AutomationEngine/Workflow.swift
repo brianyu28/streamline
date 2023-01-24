@@ -9,7 +9,7 @@ import Foundation
 
 /** A workflow represents an automation created by a user. */
 /** Currently, workflows can only be used as simple text replacements, but different types of workflows are planned. */
-struct Workflow {
+struct Workflow: Hashable {
     var trigger = ""
     var content = ""
 }
