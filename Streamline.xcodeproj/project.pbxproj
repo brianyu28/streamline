@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD7582980DB4400DCEF2A /* GroupView.swift */; };
+		D30FD75C2980EC1000DCEF2A /* WorkflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */; };
 		D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D42978F61400168E90 /* StreamlineApp.swift */; };
 		D38AD1D72978F61400168E90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D62978F61400168E90 /* ContentView.swift */; };
 		D38AD1D92978F61500168E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38AD1D82978F61500168E90 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		D30FD7582980DB4400DCEF2A /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowView.swift; sourceTree = "<group>"; };
 		D38AD1D12978F61400168E90 /* Streamline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38AD1D42978F61400168E90 /* StreamlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlineApp.swift; sourceTree = "<group>"; };
 		D38AD1D62978F61400168E90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D30FD75A2980EBFC00DCEF2A /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */,
+			);
+			path = Workflow;
+			sourceTree = "<group>";
+		};
 		D38AD1C82978F61400168E90 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 				D3CCBECA297E43FB00BEBC61 /* Main */,
 				D3CCBECB297E440400BEBC61 /* Errors */,
 				D3CCBEC5297E3F6A00BEBC61 /* WorkflowGroups */,
+				D30FD75A2980EBFC00DCEF2A /* Workflow */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 				D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */,
 				D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */,
 				D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */,
+				D30FD75C2980EC1000DCEF2A /* WorkflowView.swift in Sources */,
 				D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */,
 				D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */,
 				D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */,
