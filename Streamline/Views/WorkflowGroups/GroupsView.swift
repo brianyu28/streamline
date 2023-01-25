@@ -10,58 +10,47 @@ import SwiftUI
 struct GroupsView: View {
     @EnvironmentObject var appState: AppState
     
-    @State private var selection: WorkflowGroup? = nil
-    
-    /** State relating to editing a current group name. */
-    @State private var isEditingGroupName: Bool = false
-    @FocusState private var isTextFieldFocused: Bool
-    @State private var groupTextFieldContent: String = ""
+    @State private var selectionId: UUID? = nil
+    @State private var isEditingSelectionName: Bool = false
+    @State private var editedSelectionName: String = ""
+    @FocusState private var focusedTextEditor: UUID?
+
+    /** Start editing the title of a workflow group. */
+    func startEditingGroup(group: WorkflowGroup) {
+        selectionId = group.id
+        editedSelectionName = group.name
+        isEditingSelectionName = true
+        focusedTextEditor = group.id
+    }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Groups View")
-            ForEach(appState.workflowGroups) { group in
-                GroupListItem(
-                    group: group,
-                    updateName: { newName in
-                        appState.updateGroupName(id: group.id, name: newName)
-                        isEditingGroupName = false
-                    },
-                    isEditing: selection == group && isEditingGroupName,
-                    isTextFieldFocused: $isTextFieldFocused,
-                    groupTextFieldContent: $groupTextFieldContent
-                )
-                .padding(10)
-                .background(selection == group ? AppConstants.colorGroupsSidebarHighlight : AppConstants.colorGroupsSidebar)
-                .cornerRadius(10)
-                .onTapGesture {
-                    if (selection == group) {
-                        // Edit the selected group's name
-                        if !isEditingGroupName {
-                            groupTextFieldContent = group.name
-                            isEditingGroupName = true
-                            isTextFieldFocused = true
-                        }
-                    } else {
-                        if let selection = selection, isEditingGroupName {
-                            appState.updateGroupName(id: selection.id, name: groupTextFieldContent)
-                        }
-                        isEditingGroupName = false
-                        selection = group
+        NavigationView {
+            List {
+                Text("Workflow Groups")
+                    .fontWeight(.bold)
+                ForEach($appState.workflowGroups) { $group in
+                    NavigationLink(
+                        destination: GroupView(group: $group),
+                        tag: group.id,
+                        selection: $selectionId
+                    ) {
+                        TextField("Group Name", text: $group.name)
+                            .focused($focusedTextEditor, equals: group.id)
                     }
                 }
             }
-            
-            Button("Create Group") {
-                let group = appState.createNewWorkflowGroup()
-                selection = group
-                groupTextFieldContent = ""
-                isEditingGroupName = true
-                isTextFieldFocused = true
+            .listStyle(.sidebar)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Menu("\(Image(systemName: "plus"))") {
+                        Button("New Workflow Group") {
+                            let group = appState.createNewWorkflowGroup()
+                            self.startEditingGroup(group: group)
+                        }
+                    }
+                }
             }
         }
-        .background(AppConstants.colorGroupsSidebar)
-        .frame(maxHeight: .infinity)
     }
 }
 

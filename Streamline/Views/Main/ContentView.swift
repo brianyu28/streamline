@@ -11,16 +11,14 @@ struct ContentView: View {
     @StateObject var appState = AppState.shared
     
     var body: some View {
-        VStack {
-            if appState.appHasAccessibilityPermissions ?? false {
-                GroupsView()
-            } else {
-                NeedsAccessibilityPermissionsView()
-            }
+        if appState.appHasAccessibilityPermissions ?? false {
+            GroupsView()
+                .environmentObject(appState)
+        } else {
+            NeedsAccessibilityPermissionsView()
         }
-        .padding()
-        .environmentObject(appState)
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

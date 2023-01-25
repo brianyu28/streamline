@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD7582980DB4400DCEF2A /* GroupView.swift */; };
 		D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D42978F61400168E90 /* StreamlineApp.swift */; };
 		D38AD1D72978F61400168E90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D62978F61400168E90 /* ContentView.swift */; };
 		D38AD1D92978F61500168E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38AD1D82978F61500168E90 /* Assets.xcassets */; };
@@ -21,10 +22,10 @@
 		D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */; };
 		D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */; };
 		D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */; };
-		D3CCBED2297E458E00BEBC61 /* GroupListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBED1297E458E00BEBC61 /* GroupListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30FD7582980DB4400DCEF2A /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		D38AD1D12978F61400168E90 /* Streamline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38AD1D42978F61400168E90 /* StreamlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlineApp.swift; sourceTree = "<group>"; };
 		D38AD1D62978F61400168E90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroup.swift; sourceTree = "<group>"; };
 		D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroupsState.swift; sourceTree = "<group>"; };
-		D3CCBED1297E458E00BEBC61 /* GroupListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */,
-				D3CCBED1297E458E00BEBC61 /* GroupListItem.swift */,
+				D30FD7582980DB4400DCEF2A /* GroupView.swift */,
 			);
 			path = WorkflowGroups;
 			sourceTree = "<group>";
@@ -238,11 +238,11 @@
 			files = (
 				D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */,
 				D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */,
+				D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */,
 				D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */,
 				D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */,
 				D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */,
 				D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */,
-				D3CCBED2297E458E00BEBC61 /* GroupListItem.swift in Sources */,
 				D38AD1D72978F61400168E90 /* ContentView.swift in Sources */,
 				D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */,
 				D3983FB7297BA88100668CEB /* Workflow.swift in Sources */,

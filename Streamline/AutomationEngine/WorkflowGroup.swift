@@ -18,3 +18,16 @@ extension WorkflowGroup: Equatable {
         lhs.id == rhs.id
     }
 }
+
+// Preview
+extension WorkflowGroup {
+    static let previewGroup : WorkflowGroup = WorkflowGroup(
+        id: UUID(),
+        name: "Example Group",
+        workflows: [
+            Workflow(name: "Trigger 1", trigger: ":test1", content: "Expanded  1"),
+            Workflow(name: "Trigger 2", trigger: ":test2", content: "Expanded 2"),
+            Workflow(name: "Trigger 3", trigger: ":testing2", content: "Expanded 3"),
+        ]
+    )
+}

@@ -24,11 +24,14 @@ class AppState: ObservableObject {
     /** Workflows to actively listen for. */
     // TODO: Let user configure these. For testing for now, using a predefined list of workflows.
     @Published var workflows: [Workflow] = [
-        Workflow(trigger: ":test1", content: "Expanded  1"),
-        Workflow(trigger: ":test2", content: "Expanded 2"),
-        Workflow(trigger: ":testing2", content: "Expanded 3"),
+        Workflow(name: "Trigger 1", trigger: ":test1", content: "Expanded  1"),
+        Workflow(name: "Trigger 2", trigger: ":test2", content: "Expanded 2"),
+        Workflow(name: "Trigger 3", trigger: ":testing2", content: "Expanded 3"),
     ]
-    
+}
+
+// Preview state
+extension AppState {
     static var previewState : AppState {
         let state = AppState()
         state.appHasAccessibilityPermissions = true
@@ -37,13 +40,5 @@ class AppState: ObservableObject {
             WorkflowGroup(name: "Example Group 2")
         ]
         return state
-    }
-}
-
-extension AppState {
-    func updateGroupName(id: UUID, name: String) {
-        if let groupIndex = self.workflowGroups.firstIndex(where: { $0.id == id }) {
-            self.workflowGroups[groupIndex].name = name
-        }
     }
 }
