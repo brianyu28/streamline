@@ -21,13 +21,15 @@ class AppState: ObservableObject {
     
     @Published var workflowGroups: [WorkflowGroup] = []
     
-    /** Workflows to actively listen for. */
-    // TODO: Let user configure these. For testing for now, using a predefined list of workflows.
-    @Published var workflows: [Workflow] = [
-        Workflow(name: "Trigger 1", trigger: ":test1", content: "Expanded  1"),
-        Workflow(name: "Trigger 2", trigger: ":test2", content: "Expanded 2"),
-        Workflow(name: "Trigger 3", trigger: ":testing2", content: "Expanded 3"),
-    ]
+    var workflows: [Workflow] {
+        var results: [Workflow] = []
+        for group in self.workflowGroups {
+            for workflow in group.workflows {
+                results.append(workflow)
+            }
+        }
+        return results
+    }
 }
 
 // Preview state

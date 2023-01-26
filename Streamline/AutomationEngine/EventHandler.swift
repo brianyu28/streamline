@@ -65,7 +65,9 @@ struct EventHandler {
         }
 //        print("Monitored Input: \(AppState.shared.monitoredInput)")
         
-        if let workflow = Workflow.findWorkflowMatchingInput(input: AppState.shared.monitoredInput, workflows: AppState.shared.workflows) {
+        if let workflow = Workflow.findWorkflowMatchingInput(
+            input: AppState.shared.monitoredInput,
+            workflows: AppState.shared.workflows) {
             AppState.shared.isCurrentlyExecutingWorkflow = true
             Self.copyToClipboard(content: workflow.content)
             Self.simulateDeletes(count: workflow.trigger.count)

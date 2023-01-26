@@ -23,6 +23,7 @@
 		D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */; };
 		D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */; };
 		D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */; };
+		D3F7079C29823E0100FE2EA8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D3F7079B29823E0100FE2EA8 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroup.swift; sourceTree = "<group>"; };
 		D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroupsState.swift; sourceTree = "<group>"; };
+		D3F7079B29823E0100FE2EA8 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				D38AD1D82978F61500168E90 /* Assets.xcassets */,
 				D38AD1DD2978F61500168E90 /* Streamline.entitlements */,
 				D38AD1DA2978F61500168E90 /* Preview Content */,
+				D3F7079B29823E0100FE2EA8 /* Credits.rtf */,
 			);
 			path = Streamline;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38AD1DC2978F61500168E90 /* Preview Assets.xcassets in Resources */,
+				D3F7079C29823E0100FE2EA8 /* Credits.rtf in Resources */,
 				D38AD1D92978F61500168E90 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +404,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -428,7 +432,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -21,7 +21,7 @@ extension Workflow {
     // TODO: Make this more efficient, don't linearly serach on every key press.
     static func findWorkflowMatchingInput(input: String, workflows: [Workflow]) -> Workflow? {
         for workflow in workflows {
-            if input.hasSuffix(workflow.trigger) {
+            if workflow.trigger.count > 0 && input.hasSuffix(workflow.trigger) {
                 return workflow
             }
         }
