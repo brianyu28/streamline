@@ -42,7 +42,7 @@ struct GroupsView: View {
             .listStyle(.sidebar)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Menu("\(Image(systemName: "plus"))") {
+                    Menu("\(Image(systemName: "gearshape"))") {
                         Button("New Workflow Group") {
                             let group = appState.createNewWorkflowGroup()
                             self.startEditingGroup(group: group)

@@ -16,6 +16,10 @@ struct StreamlineApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            CommandGroup(replacing: CommandGroupPlacement.newItem) {
+            }
+        }
         
     }
 }
