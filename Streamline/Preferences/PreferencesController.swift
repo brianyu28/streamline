@@ -48,4 +48,25 @@ struct PreferencesController {
         }
     }
     
+    /** Load workflow groups from persistent storage. */
+    static func loadWorkflowGroups() -> [WorkflowGroup] {
+        guard let stateDirectory = getPersistentStateDirectory() else {
+            return []
+        }
+        do {
+            var results : [WorkflowGroup] = []
+            let files = try FileManager.default.contentsOfDirectory(at: stateDirectory, includingPropertiesForKeys: [])
+            for file in files {
+                guard let text = try? String(contentsOf: file, encoding: .utf8) else { continue }
+                guard let data = text.data(using: .utf8) else { continue }
+                let decoder = JSONDecoder()
+                guard let workflowGroup = try? decoder.decode(WorkflowGroup.self, from: data) else { continue }
+                results.append(workflowGroup)
+            }
+            return results
+        } catch {
+            return []
+        }
+    }
+    
 }
