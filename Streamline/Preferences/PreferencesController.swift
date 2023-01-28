@@ -11,8 +11,12 @@ struct PreferencesController {
     
     /** Get the directory to store the app's preferences folder. */
     // TODO: Currently always uses Application Support. Eventually, support alternate locations for Preferences directory.
-    static func getPersistentStateDirectory() -> URL {
-        return getApplicationSupportDirectory()!
+    static func getPersistentStateDirectory() -> URL? {
+        guard let url = getApplicationSupportDirectory()?.appendingPathComponent("WorkflowGroups") else {
+            return nil
+        }
+        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+        return url
     }
     
     /** Get the app's subdirectory in Application Support, creating it if needed. */
@@ -20,7 +24,6 @@ struct PreferencesController {
         let applicationSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         let url = applicationSupportURL.appendingPathComponent("Streamline")
         if !FileManager.default.fileExists(atPath: url.path) {
-            print("Trying to create...")
             do {
                 try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
             } catch {
@@ -28,6 +31,21 @@ struct PreferencesController {
             }
         }
         return url
+    }
+    
+    static func saveWorkflowGroup(workflowGroup: WorkflowGroup) {
+        guard let serializedWorkflowGroup = workflowGroup.serialize() else {
+            return
+        }
+        guard let stateDirectory = getPersistentStateDirectory() else {
+            return
+        }
+        let filename = stateDirectory.appendingPathComponent("\(workflowGroup.id).streamline", isDirectory: false)
+        do {
+            try serializedWorkflowGroup.write(to: filename, atomically: true, encoding: .utf8)
+        } catch {
+            return
+        }
     }
     
 }

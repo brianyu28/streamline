@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GroupView: View {
+    @EnvironmentObject var appState: AppState
+    
     @Binding var group: WorkflowGroup
     
     /** Workflow currently selected in table. */
@@ -47,7 +49,8 @@ struct GroupView: View {
                     if let $workflow = getSelectedWorkflow() {
                         WorkflowView(
                             workflow: $workflow,
-                            nameFieldFocused: $workflowNameFocused
+                            nameFieldFocused: $workflowNameFocused,
+                            workflowGroup: group
                         )
                     } else {
                         Text("Select a workflow to view details.")
@@ -69,6 +72,7 @@ struct GroupView: View {
                         group.workflows.append(workflow)
                         createdWorkflow = workflow.id
                         selectedWorkflow = nil
+                        appState.scheduleSaveWorkflowGroup(workflowGroup: group)
                         DispatchQueue.main.async {
                             workflowNameFocused = true
                         }

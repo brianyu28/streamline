@@ -21,6 +21,9 @@ class AppState: ObservableObject {
     
     @Published var workflowGroups: [WorkflowGroup] = []
     
+    /** Mapping of workflow group IDs to the time of the next save of the workflow group. */
+    var workflowGroupSaveTimes: [UUID: DispatchTime] = [:]
+    
     var workflows: [Workflow] {
         var results: [Workflow] = []
         for group in self.workflowGroups {

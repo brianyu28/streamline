@@ -9,7 +9,7 @@ import Foundation
 
 /** A workflow represents an automation created by a user. */
 /** Currently, workflows can only be used as simple text replacements, but different types of workflows are planned. */
-struct Workflow: Hashable, Identifiable {
+struct Workflow: Hashable, Identifiable, Codable {
     var id = UUID()
     var name = ""
     var trigger = ""
@@ -31,5 +31,5 @@ extension Workflow {
 
 // Previews
 extension Workflow {
-    static let previewWorkflow : Workflow = Workflow(name: "Test 1", trigger: ":test1", content: "Expanded Test 1")
+    static var previewWorkflow : Workflow = Workflow(name: "Test 1", trigger: ":test1", content: "Expanded Test 1")
 }

@@ -26,7 +26,7 @@ struct GroupsView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("Workflow Groups")
+                Text("Groups")
                     .fontWeight(.bold)
                 ForEach($appState.workflowGroups) { $group in
                     NavigationLink(
@@ -34,17 +34,28 @@ struct GroupsView: View {
                         tag: group.id,
                         selection: $selectionId
                     ) {
-                        TextField("Group Name", text: $group.name)
+                        TextField("Group Name", text: Binding(
+                            get: { group.name },
+                            set: {
+                                if (group.name == $0) {
+                                    return
+                                }
+                                group.name = $0
+                                appState.scheduleSaveWorkflowGroup(workflowGroup: group)
+                            }
+                        ))
                             .focused($focusedTextEditor, equals: group.id)
                     }
+                    
                 }
             }
             .listStyle(.sidebar)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Menu("\(Image(systemName: "gearshape"))") {
-                        Button("New Workflow Group") {
+                    Menu("\(Image(systemName: "plus"))") {
+                        Button("New Group") {
                             let group = appState.createNewWorkflowGroup()
+                            appState.scheduleSaveWorkflowGroup(workflowGroup: group)
                             self.startEditingGroup(group: group)
                         }
                     }
