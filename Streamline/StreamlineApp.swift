@@ -17,10 +17,15 @@ struct StreamlineApp: App {
             ContentView()
         }
         .commands {
+            SidebarCommands()
             CommandGroup(replacing: CommandGroupPlacement.newItem) {
             }
         }
         .handlesExternalEvents(matching: [])
+        
+        Settings {
+            SettingsView()
+        }
         
     }
 }

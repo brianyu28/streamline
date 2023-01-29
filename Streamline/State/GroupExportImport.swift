@@ -54,7 +54,20 @@ struct GroupExportImport {
                 return
             }
         } else {
-            AppState.shared.addGroup(workflowGroup: workflowGroup)
+            let alert = NSAlert()
+            alert.messageText = "Importing group: \(workflowGroup.name)"
+            alert.informativeText = "Confirm whether you'd like to import this group."
+            alert.addButton(withTitle: "Import")
+            alert.addButton(withTitle: "Cancel")
+            switch alert.runModal() {
+            case .alertFirstButtonReturn:
+                AppState.shared.addGroup(workflowGroup: workflowGroup)
+                return
+            case .alertSecondButtonReturn:
+                return
+            default:
+                return
+            }
         }
     }
 }

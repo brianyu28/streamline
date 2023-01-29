@@ -58,6 +58,7 @@ struct GroupsView: View {
                 }
             }
             .listStyle(.sidebar)
+            .frame(minWidth: 160)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Menu("\(Image(systemName: "plus"))") {

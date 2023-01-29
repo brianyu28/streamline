@@ -51,7 +51,7 @@ struct GroupView: View {
                             workflowGroup: group
                         )
                     } else {
-                        Text("Select a workflow to view details.")
+                        Text("Create or select a workflow to view details.")
                     }
                 }
                 .frame(minHeight: 200)
