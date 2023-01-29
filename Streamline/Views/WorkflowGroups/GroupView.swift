@@ -60,6 +60,18 @@ struct GroupView: View {
             .padding([.top])
             .navigationTitle(group.name)
             .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    if let selectedWorkflowId = selectedWorkflow {
+                        Button() {
+                            group.deleteWorkflowById(workflowId: selectedWorkflowId)
+                            AppState.shared.scheduleSaveWorkflowGroup(workflowGroup: group)
+                        } label: {
+                            Image(systemName: "trash")
+                                .imageScale(.large)
+                        }
+                        .help("Delete workflow")
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button() {
                         let workflow = Workflow(

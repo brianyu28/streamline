@@ -19,4 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             EventHandler.startListeningForSystemEvents()
         }
     }
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        for url in urls {
+            GroupExportImport.importWorkflowGroup(url: url)
+        }
+    }
 }

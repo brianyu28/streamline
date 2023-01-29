@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct AppConstants {
     static let appName = "Streamline"
@@ -13,4 +14,5 @@ struct AppConstants {
     static let colorGroupsSidebar = Color(red: 0.98, green: 0.98, blue: 0.98)
     static let colorGroupsSidebarHighlight = Color(red: 0.86, green: 0.86, blue: 0.86)
     
+    static let streamlineFileType = UTType("me.brianyu.streamline")!
 }

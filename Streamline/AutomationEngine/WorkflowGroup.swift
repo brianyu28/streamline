@@ -13,6 +13,20 @@ struct WorkflowGroup: Identifiable, Hashable, Codable {
     var workflows: [Workflow] = []
 }
 
+extension WorkflowGroup {
+    mutating func deleteWorkflowById(workflowId: UUID) {
+        self.workflows.removeAll(where: { $0.id == workflowId })
+    }
+    
+    // Regenerate all IDs for group and workflows.
+    mutating func regenerateIds() {
+        self.id = UUID()
+        for (i, _) in workflows.enumerated() {
+            self.workflows[i].id = UUID()
+        }
+    }
+}
+
 extension WorkflowGroup: Equatable {
     static func == (lhs: WorkflowGroup, rhs: WorkflowGroup) -> Bool {
         lhs.id == rhs.id

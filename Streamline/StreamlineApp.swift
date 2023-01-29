@@ -20,6 +20,7 @@ struct StreamlineApp: App {
             CommandGroup(replacing: CommandGroupPlacement.newItem) {
             }
         }
+        .handlesExternalEvents(matching: [])
         
     }
 }

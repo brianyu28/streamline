@@ -20,6 +20,7 @@
 		D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB4297BA4F600668CEB /* EventHandler.swift */; };
 		D3983FB7297BA88100668CEB /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB6297BA88100668CEB /* Workflow.swift */; };
 		D3B186042985785B00ACFF33 /* StatePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B186032985785B00ACFF33 /* StatePersistence.swift */; };
+		D3B1860629861B7300ACFF33 /* GroupExportImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1860529861B7300ACFF33 /* GroupExportImport.swift */; };
 		D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */; };
 		D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */; };
 		D3CCBEC9297E3FB100BEBC61 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */; };
@@ -43,6 +44,8 @@
 		D3983FB4297BA4F600668CEB /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		D3983FB6297BA88100668CEB /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
 		D3B186032985785B00ACFF33 /* StatePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePersistence.swift; sourceTree = "<group>"; };
+		D3B1860529861B7300ACFF33 /* GroupExportImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExportImport.swift; sourceTree = "<group>"; };
+		D3B1860729861DF800ACFF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		D3CCBEC3297E3BA100BEBC61 /* WorkflowGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowGroup.swift; sourceTree = "<group>"; };
 		D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		D38AD1D32978F61400168E90 /* Streamline */ = {
 			isa = PBXGroup;
 			children = (
+				D3B1860729861DF800ACFF33 /* Info.plist */,
 				D38AD1D42978F61400168E90 /* StreamlineApp.swift */,
 				D38AD1E52978FE2500168E90 /* AppDelegate.swift */,
 				D3983FB1297BA2B200668CEB /* Config */,
@@ -179,6 +183,7 @@
 				D3983FAA297BA05C00668CEB /* AppState.swift */,
 				D3CCBECF297E44DF00BEBC61 /* WorkflowGroupsState.swift */,
 				D3B186032985785B00ACFF33 /* StatePersistence.swift */,
+				D3B1860529861B7300ACFF33 /* GroupExportImport.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				D38AD1D72978F61400168E90 /* ContentView.swift in Sources */,
 				D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */,
 				D3983FB7297BA88100668CEB /* Workflow.swift in Sources */,
+				D3B1860629861B7300ACFF33 /* GroupExportImport.swift in Sources */,
 				D3983FAF297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift in Sources */,
 				D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */,
 				D3983FAB297BA05C00668CEB /* AppState.swift in Sources */,
@@ -402,6 +408,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Streamline/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,6 +437,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Streamline/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

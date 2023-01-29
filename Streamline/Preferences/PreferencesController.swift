@@ -34,18 +34,20 @@ struct PreferencesController {
     }
     
     static func saveWorkflowGroup(workflowGroup: WorkflowGroup) {
-        guard let serializedWorkflowGroup = workflowGroup.serialize() else {
-            return
-        }
-        guard let stateDirectory = getPersistentStateDirectory() else {
-            return
-        }
+        guard let serializedWorkflowGroup = workflowGroup.serialize() else { return }
+        guard let stateDirectory = getPersistentStateDirectory() else { return }
         let filename = stateDirectory.appendingPathComponent("\(workflowGroup.id).streamline", isDirectory: false)
         do {
             try serializedWorkflowGroup.write(to: filename, atomically: true, encoding: .utf8)
         } catch {
             return
         }
+    }
+    
+    static func deleteWorkflowGroup(workflowGroup: WorkflowGroup) {
+        guard let stateDirectory = getPersistentStateDirectory() else { return }
+        let url = stateDirectory.appendingPathComponent("\(workflowGroup.id).streamline", isDirectory: false)
+        try? FileManager.default.removeItem(at: url)
     }
     
     /** Load workflow groups from persistent storage. */

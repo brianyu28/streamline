@@ -46,6 +46,14 @@ struct GroupsView: View {
                         ))
                             .focused($focusedTextEditor, equals: group.id)
                     }
+                    .contextMenu {
+                        Button("Delete Group") {
+                            appState.deleteGroup(workflowGroup: group)
+                        }
+                        Button("Export Group") {
+                            GroupExportImport.exportWorkflowGroup(workflowGroup: group)
+                        }
+                    }
                     
                 }
             }
@@ -55,7 +63,6 @@ struct GroupsView: View {
                     Menu("\(Image(systemName: "plus"))") {
                         Button("New Group") {
                             let group = appState.createNewWorkflowGroup()
-                            appState.scheduleSaveWorkflowGroup(workflowGroup: group)
                             self.startEditingGroup(group: group)
                         }
                     }
