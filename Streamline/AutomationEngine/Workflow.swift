@@ -31,5 +31,5 @@ extension Workflow {
 
 // Previews
 extension Workflow {
-    static var previewWorkflow : Workflow = Workflow(name: "Test 1", trigger: ":test1", content: "Expanded Test 1")
+    static let previewWorkflow : Workflow = Workflow(name: "Test 1", trigger: ":test1", content: "Expanded Test 1")
 }

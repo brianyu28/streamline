@@ -36,7 +36,7 @@ extension WorkflowGroup {
 
 // Preview
 extension WorkflowGroup {
-    static var previewGroup : WorkflowGroup = WorkflowGroup(
+    static let previewGroup : WorkflowGroup = WorkflowGroup(
         id: UUID(),
         name: "Example Group",
         workflows: [

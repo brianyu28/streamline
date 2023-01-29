@@ -63,7 +63,7 @@ struct PreferencesController {
                 guard let workflowGroup = try? decoder.decode(WorkflowGroup.self, from: data) else { continue }
                 results.append(workflowGroup)
             }
-            return results
+            return results.sorted(by: { $0.name < $1.name })
         } catch {
             return []
         }
