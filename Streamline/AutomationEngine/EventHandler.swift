@@ -14,7 +14,7 @@ struct EventHandler {
     
     /** Some key codes should reset the currently monitored string: e.g. arrow keys, enter, return */
     static let resettingKeyCodes = [123, 124, 125, 126, 76, 36]
-    static let backspaceKeyCodes = [51, 46]
+    static let backspaceKeyCodes = [51]
     
     /** All system events to listen for. */
     static let eventsToMonitor: NSEvent.EventTypeMask = [.keyDown, .leftMouseDown, .rightMouseDown, .otherMouseDown]
