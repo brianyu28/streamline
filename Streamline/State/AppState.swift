@@ -5,6 +5,7 @@
 //  Created by Brian Yu on 1/20/23.
 //
 
+import KeyboardShortcuts
 import SwiftUI
 
 class AppState: ObservableObject {
@@ -20,6 +21,12 @@ class AppState: ObservableObject {
     @Published var monitoredInput: String = ""
     
     @Published var workflowGroups: [WorkflowGroup] = []
+    
+    init() {
+        KeyboardShortcuts.onKeyUp(for: .toggleStreamlinePanel) {
+            StreamlinePanel.show()
+        }
+    }
     
     /** Mapping of workflow group IDs to the time of the next save of the workflow group. */
     var workflowGroupSaveTimes: [UUID: DispatchTime] = [:]

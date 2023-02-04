@@ -32,4 +32,9 @@ extension Workflow {
 // Previews
 extension Workflow {
     static let previewWorkflow : Workflow = Workflow(name: "Test 1", trigger: ":test1", content: "Expanded Test 1")
+    static let previewLongWorkflow : Workflow = Workflow(
+        name: "This is an example of a long workflow name. This is a continuation of the long workflow name.",
+        trigger: ":test-trigger-long",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie congue lorem, a tristique est. Ut eleifend, ipsum malesuada vulputate rhoncus, nisl urna bibendum est, a cursus quam urna quis lacus. Ut ut dictum est, vitae rhoncus sapien. Proin sit amet volutpat dui, nec pellentesque mi."
+    )
 }

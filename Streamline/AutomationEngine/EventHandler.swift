@@ -68,12 +68,18 @@ struct EventHandler {
         if let workflow = Workflow.findWorkflowMatchingInput(
             input: AppState.shared.monitoredInput,
             workflows: AppState.shared.workflows) {
-            AppState.shared.isCurrentlyExecutingWorkflow = true
-            Self.copyToClipboard(content: workflow.content)
-            Self.simulateDeletes(count: workflow.trigger.count)
-            Self.triggerPasteKeyboardShortcut()
-            AppState.shared.isCurrentlyExecutingWorkflow = false
+            Self.runWorkflow(workflow: workflow, simulateDeletes: true)
         }
+    }
+    
+    static func runWorkflow(workflow: Workflow, simulateDeletes: Bool = true) {
+        AppState.shared.isCurrentlyExecutingWorkflow = true
+        Self.copyToClipboard(content: workflow.content)
+        if simulateDeletes {
+            Self.simulateDeletes(count: workflow.trigger.count)
+        }
+        Self.triggerPasteKeyboardShortcut() 
+        AppState.shared.isCurrentlyExecutingWorkflow = false
     }
     
     static func copyToClipboard(content: String) {

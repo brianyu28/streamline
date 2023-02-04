@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD7582980DB4400DCEF2A /* GroupView.swift */; };
 		D30FD75C2980EC1000DCEF2A /* WorkflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */; };
+		D34246F8298E0A8600F881F1 /* StreamlinePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34246F7298E0A8600F881F1 /* StreamlinePanel.swift */; };
+		D34246FA298E0C5D00F881F1 /* WorkflowsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34246F9298E0C5D00F881F1 /* WorkflowsPanelView.swift */; };
+		D34246FD298E127700F881F1 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = D34246FC298E127700F881F1 /* KeyboardShortcuts */; };
+		D34246FF298EF33C00F881F1 /* PanelResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34246FE298EF33C00F881F1 /* PanelResultsView.swift */; };
 		D383677D298633150030029E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383677C298633150030029E /* SettingsView.swift */; };
 		D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D42978F61400168E90 /* StreamlineApp.swift */; };
 		D38AD1D72978F61400168E90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D62978F61400168E90 /* ContentView.swift */; };
@@ -20,6 +24,7 @@
 		D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB2297BA2C900668CEB /* AppConstants.swift */; };
 		D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB4297BA4F600668CEB /* EventHandler.swift */; };
 		D3983FB7297BA88100668CEB /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB6297BA88100668CEB /* Workflow.swift */; };
+		D3AFB43F298F02160025B6B6 /* PanelResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFB43E298F02160025B6B6 /* PanelResultView.swift */; };
 		D3B186042985785B00ACFF33 /* StatePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B186032985785B00ACFF33 /* StatePersistence.swift */; };
 		D3B1860629861B7300ACFF33 /* GroupExportImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1860529861B7300ACFF33 /* GroupExportImport.swift */; };
 		D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */; };
@@ -32,6 +37,9 @@
 /* Begin PBXFileReference section */
 		D30FD7582980DB4400DCEF2A /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowView.swift; sourceTree = "<group>"; };
+		D34246F7298E0A8600F881F1 /* StreamlinePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlinePanel.swift; sourceTree = "<group>"; };
+		D34246F9298E0C5D00F881F1 /* WorkflowsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowsPanelView.swift; sourceTree = "<group>"; };
+		D34246FE298EF33C00F881F1 /* PanelResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelResultsView.swift; sourceTree = "<group>"; };
 		D383677C298633150030029E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D38AD1D12978F61400168E90 /* Streamline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38AD1D42978F61400168E90 /* StreamlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlineApp.swift; sourceTree = "<group>"; };
@@ -45,6 +53,7 @@
 		D3983FB2297BA2C900668CEB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D3983FB4297BA4F600668CEB /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		D3983FB6297BA88100668CEB /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
+		D3AFB43E298F02160025B6B6 /* PanelResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelResultView.swift; sourceTree = "<group>"; };
 		D3B186032985785B00ACFF33 /* StatePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePersistence.swift; sourceTree = "<group>"; };
 		D3B1860529861B7300ACFF33 /* GroupExportImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExportImport.swift; sourceTree = "<group>"; };
 		D3B1860729861DF800ACFF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34246FD298E127700F881F1 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +82,17 @@
 				D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */,
 			);
 			path = Workflow;
+			sourceTree = "<group>";
+		};
+		D34246F6298E0A1400F881F1 /* WorkflowsPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D34246F7298E0A8600F881F1 /* StreamlinePanel.swift */,
+				D34246F9298E0C5D00F881F1 /* WorkflowsPanelView.swift */,
+				D34246FE298EF33C00F881F1 /* PanelResultsView.swift */,
+				D3AFB43E298F02160025B6B6 /* PanelResultView.swift */,
+			);
+			path = WorkflowsPanel;
 			sourceTree = "<group>";
 		};
 		D383677B298633020030029E /* Settings */ = {
@@ -128,6 +149,7 @@
 		D3983FAC297BA1DA00668CEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D34246F6298E0A1400F881F1 /* WorkflowsPanel */,
 				D3CCBECA297E43FB00BEBC61 /* Main */,
 				D3CCBECB297E440400BEBC61 /* Errors */,
 				D383677B298633020030029E /* Settings */,
@@ -215,6 +237,9 @@
 			dependencies = (
 			);
 			name = Streamline;
+			packageProductDependencies = (
+				D34246FC298E127700F881F1 /* KeyboardShortcuts */,
+			);
 			productName = Streamline;
 			productReference = D38AD1D12978F61400168E90 /* Streamline.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +268,9 @@
 				Base,
 			);
 			mainGroup = D38AD1C82978F61400168E90;
+			packageReferences = (
+				D34246FB298E127700F881F1 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = D38AD1D22978F61400168E90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */,
+				D34246FA298E0C5D00F881F1 /* WorkflowsPanelView.swift in Sources */,
 				D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */,
 				D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */,
 				D30FD75C2980EC1000DCEF2A /* WorkflowView.swift in Sources */,
@@ -279,7 +308,9 @@
 				D3983FB3297BA2C900668CEB /* AppConstants.swift in Sources */,
 				D3CCBED0297E44DF00BEBC61 /* WorkflowGroupsState.swift in Sources */,
 				D3B186042985785B00ACFF33 /* StatePersistence.swift in Sources */,
+				D34246FF298EF33C00F881F1 /* PanelResultsView.swift in Sources */,
 				D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */,
+				D34246F8298E0A8600F881F1 /* StreamlinePanel.swift in Sources */,
 				D38AD1D72978F61400168E90 /* ContentView.swift in Sources */,
 				D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */,
 				D3983FB7297BA88100668CEB /* Workflow.swift in Sources */,
@@ -287,6 +318,7 @@
 				D3983FAF297BA20500668CEB /* NeedsAccessibilityPermissionsView.swift in Sources */,
 				D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */,
 				D3983FAB297BA05C00668CEB /* AppState.swift in Sources */,
+				D3AFB43F298F02160025B6B6 /* PanelResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +522,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D34246FB298E127700F881F1 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = exactVersion;
+				version = 1.9.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D34246FC298E127700F881F1 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D34246FB298E127700F881F1 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D38AD1C92978F61400168E90 /* Project object */;
 }

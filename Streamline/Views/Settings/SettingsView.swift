@@ -5,6 +5,7 @@
 //  Created by Brian Yu on 1/28/23.
 //
 
+import KeyboardShortcuts
 import SwiftUI
 
 struct SettingsView: View {
@@ -21,6 +22,9 @@ struct SettingsView: View {
             Text("When app icon is hidden from Dock, relaunch application in Finder to open the editor.")
                 .font(.callout)
                 .foregroundColor(AppConstants.colorTextCaption)
+            Form {
+                KeyboardShortcuts.Recorder("Toggle Streamline Quick Entry:", name: .toggleStreamlinePanel)
+            }
         }
         .padding()
         .frame(minWidth: 400, minHeight: 250)
