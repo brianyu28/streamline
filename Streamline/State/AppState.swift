@@ -34,6 +34,9 @@ class AppState: ObservableObject {
     var workflows: [Workflow] {
         var results: [Workflow] = []
         for group in self.workflowGroups {
+            if !group.isEnabled {
+                continue
+            }
             for workflow in group.workflows {
                 results.append(workflow)
             }
@@ -49,7 +52,7 @@ extension AppState {
         state.appHasAccessibilityPermissions = true
         state.workflowGroups = [
             WorkflowGroup(name: "Example Group 1"),
-            WorkflowGroup(name: "Example Group 2")
+            WorkflowGroup(name: "Example Group 2"),
         ]
         return state
     }

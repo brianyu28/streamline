@@ -12,7 +12,11 @@ struct WorkflowView: View {
     @Binding var workflow : Workflow
     var nameFieldFocused : FocusState<Bool>.Binding
     
-    let workflowGroup: WorkflowGroup
+    @Binding var workflowGroup: WorkflowGroup
+    
+    func scheduleSaveGroup() {
+        appState.scheduleSaveWorkflowGroup(workflowGroup: workflowGroup)
+    }
     
     var body: some View {
         VStack {
@@ -20,51 +24,27 @@ struct WorkflowView: View {
                 Text("Name")
                     .frame(width: 80, alignment: .trailing)
                 Spacer()
-                TextField("", text: Binding(
-                    get: { workflow.name },
-                    set: {
-                        if (workflow.name == $0) {
-                            return
-                        }
-                        workflow.name = $0
-                        appState.scheduleSaveWorkflowGroup(workflowGroup: workflowGroup)
-                    }
-                ))
+                TextField("", text: $workflow.name)
                 .focused(nameFieldFocused)
             }
             HStack {
                 Text("Trigger")
                     .frame(width: 80, alignment: .trailing)
                 Spacer()
-                TextField("", text: Binding(
-                    get: { workflow.trigger },
-                    set: {
-                        if (workflow.trigger == $0) {
-                            return
-                        }
-                        workflow.trigger = $0
-                        appState.scheduleSaveWorkflowGroup(workflowGroup: workflowGroup)
-                    }
-                ))
+                TextField("", text: $workflow.trigger)
             }
             Divider()
             VStack(alignment: .leading) {
                 Text("Content")
                     .padding([.leading])
-                TextEditor(text: Binding(
-                    get: { workflow.content },
-                    set: {
-                        if (workflow.content == $0) {
-                            return
-                        }
-                        workflow.content = $0
-                        appState.scheduleSaveWorkflowGroup(workflowGroup: workflowGroup)
-                    }
-                ))
+                TextEditor(text: $workflow.content)
                 .padding([.leading, .trailing])
                 .font(.custom("HelveticaNeue", size: 13))
             }
         }
+        .onChange(of: workflow.name) { _ in scheduleSaveGroup() }
+        .onChange(of: workflow.trigger) { _ in scheduleSaveGroup() }
+        .onChange(of: workflow.content) { _ in scheduleSaveGroup() }
     }
 }
 
@@ -75,7 +55,7 @@ struct WorkflowView_Previews: PreviewProvider {
         WorkflowView(
             workflow: .constant(.previewWorkflow),
             nameFieldFocused: $nameFieldFocused,
-            workflowGroup: .previewGroup
+            workflowGroup: .constant(.previewGroup)
         )
     }
 }

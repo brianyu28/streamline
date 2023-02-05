@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GroupView: View {
     @Binding var group: WorkflowGroup
+    let resetGroupSelection: () -> Void
     
     /** Workflow currently selected in table. */
     @State private var selectedWorkflow: Workflow.ID? = nil
@@ -30,8 +31,28 @@ struct GroupView: View {
         }
     }
     
+    /** Create a new, empty workflow. */
+    func createWorkflow() {
+        let workflow = Workflow(
+            name: "",
+            trigger: "",
+            content: ""
+        )
+        group.workflows.append(workflow)
+        createdWorkflow = workflow.id
+        selectedWorkflow = nil
+        AppState.shared.scheduleSaveWorkflowGroup(workflowGroup: group)
+        DispatchQueue.main.async {
+            workflowNameFocused = true
+        }
+    }
+    
+    func scheduleSaveGroup() {
+        AppState.shared.scheduleSaveWorkflowGroup(workflowGroup: group)
+    }
+    
     var body: some View {
-            VStack {
+        VStack(alignment: .leading) {
                 Table(group.workflows, selection: $selectedWorkflow) {
                     TableColumn("Name", value: \.name)
                     TableColumn("Trigger", value: \.trigger)
@@ -48,7 +69,7 @@ struct GroupView: View {
                         WorkflowView(
                             workflow: $workflow,
                             nameFieldFocused: $workflowNameFocused,
-                            workflowGroup: group
+                            workflowGroup: $group
                         )
                     } else {
                         Text("Create or select a workflow to view details.")
@@ -58,13 +79,13 @@ struct GroupView: View {
                 .padding()
             }
             .padding([.top])
-            .navigationTitle(group.name)
+            .navigationTitle(group.isEnabled ? group.name : "[Disabled] \(group.name)")
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     if let selectedWorkflowId = selectedWorkflow {
                         Button() {
                             group.deleteWorkflowById(workflowId: selectedWorkflowId)
-                            AppState.shared.scheduleSaveWorkflowGroup(workflowGroup: group)
+                            scheduleSaveGroup()
                         } label: {
                             Image(systemName: "trash")
                                 .imageScale(.large)
@@ -72,32 +93,39 @@ struct GroupView: View {
                         .help("Delete workflow")
                     }
                 }
-                ToolbarItem(placement: .primaryAction) {
-                    Button() {
-                        let workflow = Workflow(
-                            name: "",
-                            trigger: "",
-                            content: ""
-                        )
-                        group.workflows.append(workflow)
-                        createdWorkflow = workflow.id
-                        selectedWorkflow = nil
-                        AppState.shared.scheduleSaveWorkflowGroup(workflowGroup: group)
-                        DispatchQueue.main.async {
-                            workflowNameFocused = true
-                        }
-                    } label: {
+                ToolbarItem(placement: .automatic) {
+                    Button(action: createWorkflow) {
                         Image(systemName: "plus")
                             .imageScale(.large)
                     }
                     .help("Add a new workflow")
                 }
+                ToolbarItem(placement: .primaryAction) {
+                    Menu("\(Image(systemName: "info.circle"))") {
+                        VStack {
+                            Toggle("Group enabled?", isOn: $group.isEnabled)
+                            Button("Export Group") {
+                                GroupExportImport.exportWorkflowGroup(workflowGroup: group)
+                            }
+                            Button("Delete Group") {
+                                if AppState.shared.deleteGroup(workflowGroup: group, withConfirmation: true) {
+                                    resetGroupSelection()
+                                }
+                            }
+                        }
+                    }
+                    .help("Group info")
+                }
             }
+            .onChange(of: group.isEnabled) { _ in scheduleSaveGroup() }
         }
 }
 
 struct GroupView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupView(group: .constant(.previewGroup))
+        GroupView(
+            group: .constant(.previewGroup),
+            resetGroupSelection: {}
+        )
     }
 }

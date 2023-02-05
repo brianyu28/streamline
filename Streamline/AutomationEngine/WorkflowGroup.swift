@@ -11,6 +11,19 @@ struct WorkflowGroup: Identifiable, Hashable, Codable {
     var id = UUID()
     var name : String = ""
     var workflows: [Workflow] = []
+    var isEnabled : Bool = true
+}
+
+extension WorkflowGroup {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(UUID.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.workflows = try container.decode([Workflow].self, forKey: .workflows)
+        
+        // isEnabled introduced in v0.3.0, not present in older configuration files; default true
+        self.isEnabled = (try? container.decode(Bool.self, forKey: .isEnabled)) ?? true
+    }
 }
 
 extension WorkflowGroup {
@@ -51,7 +64,6 @@ extension WorkflowGroup {
 // Preview
 extension WorkflowGroup {
     static let previewGroup : WorkflowGroup = WorkflowGroup(
-        id: UUID(),
         name: "Example Group",
         workflows: [
             Workflow(name: "Trigger 1", trigger: ":test1", content: "Expanded  1"),

@@ -21,6 +21,21 @@ struct GroupExportImport {
         return savePanel.runModal() == .OK ? savePanel.url : nil
     }
     
+    static func showImportPanel() -> URL? {
+        let openPanel = NSOpenPanel()
+        openPanel.allowedContentTypes = [AppConstants.streamlineFileType]
+        openPanel.title = "Import Group"
+        openPanel.message = "Choose group to import"
+        
+        return openPanel.runModal() == .OK ? openPanel.url : nil
+    }
+    
+    static func chooseAndImportWorkflowGroup() {
+        if let url = showImportPanel() {
+            importWorkflowGroup(url: url)
+        }
+    }
+    
     static func exportWorkflowGroup(workflowGroup: WorkflowGroup) {
         guard let url = showExportSavePanel() else { return }
         guard let serializedGroup = workflowGroup.serialize() else { return }
