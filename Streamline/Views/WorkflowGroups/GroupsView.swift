@@ -23,10 +23,6 @@ struct GroupsView: View {
         focusedTextEditor = group.id
     }
     
-    func resetGroupSelection() {
-        selectionId = nil
-    }
-    
     var body: some View {
         NavigationView {
             List {
@@ -34,7 +30,7 @@ struct GroupsView: View {
                     .fontWeight(.bold)
                 ForEach($appState.workflowGroups) { $group in
                     NavigationLink(
-                        destination: PossibleGroupView(group: $group, selectionId: $selectionId, resetGroupSelection: resetGroupSelection),
+                        destination: PossibleGroupView(group: $group),
                         tag: group.id,
                         selection: $selectionId
                     ) {
@@ -55,9 +51,7 @@ struct GroupsView: View {
                             GroupExportImport.exportWorkflowGroup(workflowGroup: group)
                         }
                         Button("Delete Group") {
-                            if appState.deleteGroup(workflowGroup: group, withConfirmation: true) {
-                                resetGroupSelection()
-                            }
+                            appState.deleteGroup(workflowGroup: group, withConfirmation: true)
                         }
                     }
                     

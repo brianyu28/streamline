@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GroupView: View {
     @Binding var group: WorkflowGroup
-    let resetGroupSelection: () -> Void
     
     /** Workflow currently selected in table. */
     @State private var selectedWorkflow: Workflow.ID? = nil
@@ -108,9 +107,7 @@ struct GroupView: View {
                                 GroupExportImport.exportWorkflowGroup(workflowGroup: group)
                             }
                             Button("Delete Group") {
-                                if AppState.shared.deleteGroup(workflowGroup: group, withConfirmation: true) {
-                                    resetGroupSelection()
-                                }
+                                AppState.shared.deleteGroup(workflowGroup: group, withConfirmation: true)
                             }
                         }
                     }
@@ -124,8 +121,7 @@ struct GroupView: View {
 struct GroupView_Previews: PreviewProvider {
     static var previews: some View {
         GroupView(
-            group: .constant(.previewGroup),
-            resetGroupSelection: {}
+            group: .constant(.previewGroup)
         )
     }
 }

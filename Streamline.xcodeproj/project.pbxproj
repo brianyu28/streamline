@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30719AF298F678200599551 /* PossibleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30719AE298F678200599551 /* PossibleGroupView.swift */; };
 		D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD7582980DB4400DCEF2A /* GroupView.swift */; };
 		D30FD75C2980EC1000DCEF2A /* WorkflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */; };
 		D34246F8298E0A8600F881F1 /* StreamlinePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34246F7298E0A8600F881F1 /* StreamlinePanel.swift */; };
@@ -25,7 +26,6 @@
 		D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB4297BA4F600668CEB /* EventHandler.swift */; };
 		D3983FB7297BA88100668CEB /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3983FB6297BA88100668CEB /* Workflow.swift */; };
 		D3AFB43F298F02160025B6B6 /* PanelResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFB43E298F02160025B6B6 /* PanelResultView.swift */; };
-		D3AFB441298F584C0025B6B6 /* PossibleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFB440298F584C0025B6B6 /* PossibleGroupView.swift */; };
 		D3B186042985785B00ACFF33 /* StatePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B186032985785B00ACFF33 /* StatePersistence.swift */; };
 		D3B1860629861B7300ACFF33 /* GroupExportImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1860529861B7300ACFF33 /* GroupExportImport.swift */; };
 		D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCBEC1297E387600BEBC61 /* PreferencesController.swift */; };
@@ -36,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30719AE298F678200599551 /* PossibleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PossibleGroupView.swift; sourceTree = "<group>"; };
 		D30FD7582980DB4400DCEF2A /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		D30FD75B2980EC1000DCEF2A /* WorkflowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowView.swift; sourceTree = "<group>"; };
 		D34246F7298E0A8600F881F1 /* StreamlinePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlinePanel.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		D3983FB4297BA4F600668CEB /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		D3983FB6297BA88100668CEB /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
 		D3AFB43E298F02160025B6B6 /* PanelResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelResultView.swift; sourceTree = "<group>"; };
-		D3AFB440298F584C0025B6B6 /* PossibleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PossibleGroupView.swift; sourceTree = "<group>"; };
 		D3B186032985785B00ACFF33 /* StatePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePersistence.swift; sourceTree = "<group>"; };
 		D3B1860529861B7300ACFF33 /* GroupExportImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExportImport.swift; sourceTree = "<group>"; };
 		D3B1860729861DF800ACFF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 			children = (
 				D3CCBEC8297E3FB100BEBC61 /* GroupsView.swift */,
 				D30FD7582980DB4400DCEF2A /* GroupView.swift */,
-				D3AFB440298F584C0025B6B6 /* PossibleGroupView.swift */,
+				D30719AE298F678200599551 /* PossibleGroupView.swift */,
 			);
 			path = WorkflowGroups;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3CCBEC4297E3BA100BEBC61 /* WorkflowGroup.swift in Sources */,
-				D3AFB441298F584C0025B6B6 /* PossibleGroupView.swift in Sources */,
+				D30719AF298F678200599551 /* PossibleGroupView.swift in Sources */,
 				D34246FA298E0C5D00F881F1 /* WorkflowsPanelView.swift in Sources */,
 				D38AD1E62978FE2500168E90 /* AppDelegate.swift in Sources */,
 				D30FD7592980DB4400DCEF2A /* GroupView.swift in Sources */,

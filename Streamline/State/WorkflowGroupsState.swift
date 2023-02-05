@@ -24,7 +24,7 @@ extension AppState {
     }
     
     /** Delete a group, removing it from both the current app state and from memory. */
-    func deleteGroup(workflowGroup: WorkflowGroup, withConfirmation: Bool = false) -> Bool {
+    func deleteGroup(workflowGroup: WorkflowGroup, withConfirmation: Bool = false) {
         if withConfirmation {
             let alert = NSAlert()
             alert.messageText = "Deleting group: \(workflowGroup.name)"
@@ -35,15 +35,14 @@ extension AppState {
             case .alertFirstButtonReturn:
                 ()
             case .alertSecondButtonReturn:
-                return false
+                return
             default:
-                return false
+                return
             }
         }
         self.workflowGroups.removeAll(where: { $0.id == workflowGroup.id })
         self.cacheWorkflows()
         PreferencesController.deleteWorkflowGroup(workflowGroup: workflowGroup)
-        return true
     }
     
     /** Replace a group with the provided group, if a group has a matching ID. */

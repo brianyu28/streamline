@@ -7,17 +7,17 @@
 //
 //  Created by Brian Yu on 2/4/23.
 //
-
 import SwiftUI
 
 struct PossibleGroupView: View {
+    @EnvironmentObject var appState: AppState
     @Binding var group: WorkflowGroup
-    @Binding var selectionId: UUID?
-    let resetGroupSelection: () -> Void
     
     var body: some View {
-        if selectionId == group.id {
-            GroupView(group: $group, resetGroupSelection: resetGroupSelection)
+        if appState.workflowGroups.contains(where: { $0.id == group.id }) {
+            GroupView(group: $group)
+        } else {
+            EmptyView()
         }
     }
 }
@@ -25,9 +25,8 @@ struct PossibleGroupView: View {
 struct PossibleGroupView_Previews: PreviewProvider {
     static var previews: some View {
         PossibleGroupView(
-            group: .constant(.previewGroup),
-            selectionId: .constant(WorkflowGroup.previewGroup.id),
-            resetGroupSelection: {}
+            group: .constant(.previewGroup)
         )
+        .environmentObject(AppState.previewState)
     }
 }
