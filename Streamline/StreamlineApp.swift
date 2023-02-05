@@ -26,6 +26,5 @@ struct StreamlineApp: App {
         Settings {
             SettingsView()
         }
-        
     }
 }

@@ -71,7 +71,11 @@ struct GroupView: View {
                             workflowGroup: $group
                         )
                     } else {
-                        Text("Create or select a workflow to view details.")
+                        HStack {
+                            Spacer()
+                            Text("Create or select a workflow to view details.")
+                            Spacer()
+                        }
                     }
                 }
                 .frame(minHeight: 200)
