@@ -18,7 +18,6 @@ struct Workflow: Hashable, Identifiable, Codable {
 
 extension Workflow {
     /** Return the first workflow whose trigger matches the input. */
-    // TODO: Make this more efficient, don't linearly serach on every key press.
     static func findWorkflowMatchingInput(input: String, workflows: [Workflow]) -> Workflow? {
         for workflow in workflows {
             if workflow.trigger.count > 0 && input.hasSuffix(workflow.trigger) {
@@ -26,6 +25,22 @@ extension Workflow {
             }
         }
         return nil
+    }
+    
+    /** Get a score for how good of a match the serach text is for the given workflow.
+     Scores are higher for a greater proportion of the name, trigger, or content matched.
+     Scores where the search text doesn't appear get a score of 0.
+     */
+    func getMatchScoreForSearchText(searchText: String) -> Double {
+        var score : Double = 0
+        let searchText = searchText.lowercased()
+        let fields = [self.name, self.trigger, self.content]
+        for field in fields {
+            if !field.isEmpty && field.lowercased().contains(searchText) {
+                score += Double(searchText.count) / Double(field.count)
+            }
+        }
+        return score
     }
 }
 

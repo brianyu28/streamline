@@ -33,12 +33,15 @@ struct WorkflowsPanelView: View {
                 .cornerRadius(10)
                 .font(.system(size: 18))
                 .onChange(of: searchText) { searchText in
-                    let lowercasedSearchText = searchText.lowercased()
-                    matchingWorkflows = AppState.shared.workflows.filter { workflow in
-                        workflow.name.lowercased().contains(lowercasedSearchText) ||
-                        workflow.trigger.lowercased().contains(lowercasedSearchText) ||
-                        workflow.content.lowercased().contains(lowercasedSearchText)
+                    
+                    // Get workflows that match the search text, reverse ordered by score
+                    matchingWorkflows = AppState.shared.workflows.map { workflow in
+                        (workflow, workflow.getMatchScoreForSearchText(searchText: searchText))
                     }
+                    .filter { _, score in score > 0 }
+                    .sorted { $0.1 > $1.1 }
+                    .map { workflow, _ in workflow }
+                    
                     selectedIndex = 0
                     resizeWithResultsCount(matchingWorkflows.count)
                 }
