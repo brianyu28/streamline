@@ -63,11 +63,14 @@ struct EventHandler {
             AppState.shared.monitoredInput = ""
             return
         }
-//        print("Monitored Input: \(AppState.shared.monitoredInput)")
+
+        guard let lastChar = AppState.shared.monitoredInput.last else {
+            return
+        }
         
         if let workflow = Workflow.findWorkflowMatchingInput(
             input: AppState.shared.monitoredInput,
-            workflows: AppState.shared.workflows) {
+            workflows: AppState.shared.cachedWorkflowMap[lastChar] ?? []) {
             Self.runWorkflow(workflow: workflow, simulateDeletes: true)
         }
     }

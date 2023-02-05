@@ -41,6 +41,7 @@ extension AppState {
             }
         }
         self.workflowGroups.removeAll(where: { $0.id == workflowGroup.id })
+        self.cacheWorkflows()
         PreferencesController.deleteWorkflowGroup(workflowGroup: workflowGroup)
         return true
     }
@@ -50,6 +51,7 @@ extension AppState {
         if let index = self.workflowGroups.firstIndex(where: { $0.id == workflowGroup.id }) {
             self.workflowGroups[index] = workflowGroup
         }
+        self.cacheWorkflows()
         PreferencesController.saveWorkflowGroup(workflowGroup: workflowGroup)
     }
 }

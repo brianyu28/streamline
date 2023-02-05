@@ -22,6 +22,8 @@ class AppState: ObservableObject {
     
     @Published var workflowGroups: [WorkflowGroup] = []
     
+    @Published var cachedWorkflowMap: [Character: [Workflow]] = [:]
+    
     init() {
         KeyboardShortcuts.onKeyUp(for: .toggleStreamlinePanel) {
             StreamlinePanel.show()
@@ -42,6 +44,29 @@ class AppState: ObservableObject {
             }
         }
         return results
+    }
+}
+
+extension AppState {
+    // Cache workflows for quick access when typing
+    func cacheWorkflows() {
+        var workflowMap: [Character : [Workflow]] = [:]
+        for group in self.workflowGroups {
+            if !group.isEnabled {
+                continue
+            }
+            for workflow in group.workflows {
+                if let lastChar = workflow.trigger.last {
+                    if var workflows = workflowMap[lastChar] {
+                        workflows.append(workflow)
+                        workflowMap[lastChar] = workflows
+                    } else {
+                        workflowMap[lastChar] = [workflow]
+                    }
+                }
+            }
+        }
+        cachedWorkflowMap = workflowMap
     }
 }
 

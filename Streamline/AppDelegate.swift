@@ -23,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Load workflow groups from persistent storage
         let workflowGroups = PreferencesController.loadWorkflowGroups()
         AppState.shared.workflowGroups = workflowGroups
+        AppState.shared.cacheWorkflows()
         
         // Request accessibility permissions if needed
         let appHasAccessibilityPermissions = EventHandler.checkEventListeningPermissions()

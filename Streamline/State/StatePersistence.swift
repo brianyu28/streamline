@@ -11,6 +11,7 @@ extension AppState {
     /** Schedule a save to disk for the workflow group. */
     func scheduleSaveWorkflowGroup(workflowGroup: WorkflowGroup) {
         // Schedule saves to happen after 1.5 seconds, in order to batch changes that happen in close succession.
+        self.cacheWorkflows()
         let deadline = DispatchTime.now() + 1.5
         self.workflowGroupSaveTimes[workflowGroup.id] = deadline
         DispatchQueue.main.asyncAfter(deadline: deadline) {
