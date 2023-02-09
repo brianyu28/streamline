@@ -12,13 +12,24 @@ struct StreamlineApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var appState = AppState.shared
     
+    @State private var debugMode: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !debugMode {
+                ContentView()
+            } else {
+                DebugView()
+            }
         }
         .commands {
             SidebarCommands()
             CommandGroup(replacing: CommandGroupPlacement.newItem) {
+            }
+            CommandGroup(after: CommandGroupPlacement.help) {
+                Button(debugMode ? "Exit Debug Mode" : "Enter Debug Mode") {
+                    debugMode = !debugMode
+                }
             }
         }
         .handlesExternalEvents(matching: [])

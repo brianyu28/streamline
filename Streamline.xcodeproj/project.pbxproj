@@ -14,6 +14,7 @@
 		D34246FA298E0C5D00F881F1 /* WorkflowsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34246F9298E0C5D00F881F1 /* WorkflowsPanelView.swift */; };
 		D34246FD298E127700F881F1 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = D34246FC298E127700F881F1 /* KeyboardShortcuts */; };
 		D34246FF298EF33C00F881F1 /* PanelResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34246FE298EF33C00F881F1 /* PanelResultsView.swift */; };
+		D34D889229949330002135E2 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D889129949330002135E2 /* DebugView.swift */; };
 		D383677D298633150030029E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383677C298633150030029E /* SettingsView.swift */; };
 		D38AD1D52978F61400168E90 /* StreamlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D42978F61400168E90 /* StreamlineApp.swift */; };
 		D38AD1D72978F61400168E90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AD1D62978F61400168E90 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 		D34246F7298E0A8600F881F1 /* StreamlinePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlinePanel.swift; sourceTree = "<group>"; };
 		D34246F9298E0C5D00F881F1 /* WorkflowsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowsPanelView.swift; sourceTree = "<group>"; };
 		D34246FE298EF33C00F881F1 /* PanelResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelResultsView.swift; sourceTree = "<group>"; };
+		D34D889129949330002135E2 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		D383677C298633150030029E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D38AD1D12978F61400168E90 /* Streamline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38AD1D42978F61400168E90 /* StreamlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamlineApp.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 			path = WorkflowsPanel;
 			sourceTree = "<group>";
 		};
+		D34D889029949320002135E2 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				D34D889129949330002135E2 /* DebugView.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		D383677B298633020030029E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 				D3CCBECC297E44B700BEBC61 /* State */,
 				D3983FAC297BA1DA00668CEB /* Views */,
 				D3CCBEC0297E385900BEBC61 /* Preferences */,
+				D34D889029949320002135E2 /* Debug */,
 				D38AD1D82978F61500168E90 /* Assets.xcassets */,
 				D38AD1DD2978F61500168E90 /* Streamline.entitlements */,
 				D38AD1DA2978F61500168E90 /* Preview Content */,
@@ -314,6 +325,7 @@
 				D3B186042985785B00ACFF33 /* StatePersistence.swift in Sources */,
 				D34246FF298EF33C00F881F1 /* PanelResultsView.swift in Sources */,
 				D3CCBEC2297E387600BEBC61 /* PreferencesController.swift in Sources */,
+				D34D889229949330002135E2 /* DebugView.swift in Sources */,
 				D34246F8298E0A8600F881F1 /* StreamlinePanel.swift in Sources */,
 				D38AD1D72978F61400168E90 /* ContentView.swift in Sources */,
 				D3983FB5297BA4F600668CEB /* EventHandler.swift in Sources */,
@@ -465,7 +477,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -496,7 +508,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.brianyu.Streamline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
