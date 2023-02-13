@@ -9,8 +9,8 @@ import Cocoa
 
 struct EventHandler {
     
-    /** Characters are tracked when typed without modifier flags or typed with Shift. */
-    static let allowableCharacterModifierFlags = [256, 131330]
+    /** Characters are tracked when typed without modifier flags or typed with Shift (left, right, or both). */
+    static let allowableCharacterModifierFlags = [256, 131330, 131332, 131334]
     
     /** Some key codes should reset the currently monitored string: e.g. arrow keys, enter, return */
     static let resettingKeyCodes = [123, 124, 125, 126, 76, 36]
