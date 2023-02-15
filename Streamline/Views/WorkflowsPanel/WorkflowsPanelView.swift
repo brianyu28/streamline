@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WorkflowsPanelView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let panel: StreamlinePanel
     let resizeWithResultsCount: (Int) -> Void
     
@@ -29,7 +31,7 @@ struct WorkflowsPanelView: View {
             TextField("Search Streamline workflows...", text: $searchText)
                 .textFieldStyle(.plain)
                 .padding(15)
-                .background(AppConstants.colorQuickPickerField)
+                .background(colorScheme == .dark ? AppConstants.colorQuickPickerFieldDark : AppConstants.colorQuickPickerField)
                 .cornerRadius(10)
                 .font(.system(size: 18))
                 .onChange(of: searchText) { searchText in

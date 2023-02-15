@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PanelResultView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let workflow: Workflow
     let isSelected: Bool
     
@@ -21,7 +23,7 @@ struct PanelResultView: View {
                 Text(workflow.trigger)
                     .padding(.horizontal, 15)
                     .padding(.vertical, 5)
-                    .background(AppConstants.colorQuickPickerField)
+                    .background(colorScheme == .dark ? AppConstants.colorQuickPickerFieldDark : AppConstants.colorQuickPickerField)
                     .cornerRadius(10)
             }
             Text(workflow.content)
@@ -29,7 +31,7 @@ struct PanelResultView: View {
         }
         .padding(10)
         .frame(height: 90)
-        .background(isSelected ? AppConstants.colorQuickPickerSelected : nil)
+        .background(isSelected ? (colorScheme == .dark ? AppConstants.colorQuickPickerSelectedDark : AppConstants.colorQuickPickerSelected) : nil)
         .cornerRadius(10)
     }
 }

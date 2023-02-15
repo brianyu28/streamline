@@ -13,7 +13,11 @@ struct AppConstants {
     static let appName = "Streamline"
     
     static let colorQuickPickerField = Color(red: 0.9, green: 0.9, blue: 0.9)
+    static let colorQuickPickerFieldDark = Color(red: 0.1, green: 0.1, blue: 0.1)
+    
     static let colorQuickPickerSelected = Color(red: 84 / 255, green: 167 / 255, blue: 255 / 255)
+    static let colorQuickPickerSelectedDark = Color(red: 33 / 255, green: 44 / 255, blue: 255 / 255)
+    
     static let colorTextCaption = Color(red: 0.4, green: 0.4, blue: 0.4)
     
     static let streamlineFileType = UTType("me.brianyu.streamline")!
