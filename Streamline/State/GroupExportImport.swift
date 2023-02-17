@@ -51,7 +51,7 @@ struct GroupExportImport {
         if let _ = AppState.shared.workflowGroups.first(where: { $0.id == workflowGroup.id }) {
             let alert = NSAlert()
             alert.messageText = "Importing group: \(workflowGroup.name)"
-            alert.informativeText = "A version of this group alrady exists in \(AppConstants.appName). You can replace the existing group or import the file as a new group."
+            alert.informativeText = "A version of this group already exists in \(AppConstants.appName). You can replace the existing group or import the file as a new group."
             alert.addButton(withTitle: "Replace Existing Group")
             alert.addButton(withTitle: "Import as New Group")
             alert.addButton(withTitle: "Cancel")
